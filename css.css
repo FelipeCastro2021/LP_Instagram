@@ -62,7 +62,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* ? É um seletor CSS que pega os filhos daquele elemento, ou seja, no caso, está pegando o elemento p com class not-acccount escrito "Não é Felipe Castro?" */
+/* ? É um seletor CSS que pega os filhos daquele elemento, ou seja, no caso, está pegando o elemento p com class not-account escrito "Não é Felipe Castro?" */
 .group:nth-child(1) { /* É um seletor de CSS que pega os filhos daquele elemento */
     min-height: 19rem;
 }

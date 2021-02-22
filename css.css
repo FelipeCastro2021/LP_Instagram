@@ -1,4 +1,5 @@
-* {
+/* ! ============ Ajustando a página ============ */
+* { /* Resetar estilos */
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,42 +10,46 @@
 
 body {
     width: 100%; /* Ocupar todo a largura do site */
-    min-height: 100vh;
+    min-height: 100vh; /* A primeira altura dele vai ser essa, se precisar aumentar ele aumenta, podendo ficar maior */
     background-color: rgb(243,243,243); /* ! Cinza que não prejudica a visão, muito usado em sites */
-    margin: 0;
+    margin: 0; 
     padding: 0;
     display: flex;
     justify-content: center; /* * Joga o conteúdo por inteiro no centro da página */
 }
 
-.instagram-wrapper {
+/* ! ============ Flex box pai ============ */
+.instagram-wrapper { /* Deixa tanto celular quanto login no meio da tela */
     display: flex; /* ? Display flex faz em um container ou elemento HTML, ele vira um flex container, que é aquele container que todos os itens que estiverem dentro dele ficarão em linha, ocupando o maior espaço daquela linha */
     align-items: center; /* Alinhamento vertical dos itens do display flex */
     justify-content: start; /* Colocar um espaçamento da esquerda para a direita */
-    width: 60%; /* Tamanho do container do login e registro do Instagram */
+    width: 60%; /* Tamanho que o conteúdo vai ocupar na tela */
     height: 100vh;
 }
 
+/* ! ============ Tratamento da imagem do celular */
 .instagram-phone {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 50%; /* Ocupará metade do conteúdo pai */
 }
 
 .instagram-phone img {
     height: 50rem;
 }
 
+/* ! ============ Tela de Login ============ */
 .instagram-continue {
     display: flex;
     align-items: center; /* Horizontal */
-    justify-items: space-around; /* Vertical */ 
+    justify-items: space-around; /* Vertical, Ocupará quase todo espaço da tela, dando maior espaço entre os itens e deixa espaço na lateral */ 
     flex-direction: column; /* O container flex vai ficar dentro da coluna, cada elemento vai ficar embaixo um do outro */
-    width: 50%;
+    width: 50%; /* Ocupará a outra metade do conteúdo pai */
     min-height: 34rem;
 }
 
+/* ! ============ Login ou Mudar de conta (dentro e tela de login) ============ */
 .group {
     display: flex;
     justify-content: space-between; /* Vai distanciar os elementos em duas extremidades da vertical */
@@ -57,26 +62,30 @@ body {
     margin-bottom: 0.5rem;
 }
 
+/* ? É um seletor CSS que pega os filhos daquele elemento, ou seja, no caso, está pegando o elemento p com class not-acccount escrito "Não é Felipe Castro?" */
 .group:nth-child(1) { /* É um seletor de CSS que pega os filhos daquele elemento */
     min-height: 19rem;
 }
 
+/* ! ========== Logo do Instagram escrito ========== */
 .instagram-logo {
     height: 3rem;
 }
 
+/* ! ========== Imagem do perfil da pessoa ========== */
 .profile-photo {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    overflow: hidden; /* Para a imagem não exceder o tamanho da div */
+    border-radius: 50%; /* Deixa ele completamente circular */
+    overflow: hidden; /* Para a parte em bloco da imagem não apareça e se extrapolar é removida */
 }
 
 .profile-photo img {
     height: 6rem;
 }
 
+/* ! ========= Continuar como Felipe Castro ========= */
 .instagram-login {
     background-color: #0095f6;
     color: white;
@@ -85,73 +94,80 @@ body {
     margin-top: 1rem;
 }
 
+/* ! ========= Remover conta ========= */
 .instagram-logout {
     color: #0095f6;
-    margin-top: 1rem;
 }
 
+/* ! ========= Não alternar contar e não é Felipe Castro (segundo container) ========= */
 .not-account {
-    color: rga(160, 160, 160);
+    color: rgb(160, 160, 160);
 }
 
+/* ! ========= Alternar conta e inscrever-se */
 .link-blue {
     color: #0095f6;
 }
 
+/* ! ========= Baixe o aplicativo no Android e IOS ========= */
 .get-the-app {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center; /* Horizontal */
     justify-content: center; /* Verticalmente */
     width: 100%;
     padding: 1.3rem 0;
 }
 
+/* ! ========= Download Android e IOS ========= */
 .download {
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-evenly; /* Deixa o mesmo espaço para todos os elementos e extremidade */
+    align-items: center; /* Vertical */
     padding: 1rem;
 }
 
-.app-download {
+/* ! ========= Ãncora do download do Android e IOS ========= */
+a.app-download {
     height: 3rem;
     width: 10rem;
     background-size: cover;
 }
 
+/* ! ========= âncora do download do IOS ========= */
 .app-download:nth-child(1) {
     background-image: url('./Imagens/download.png');
 }
 
+/* ! ========= âncora do download do Android ========= */
 .app-download:nth-child(2) {
     background-image: url('./Imagens/android_download.png');
 }
 
-/* Media queries */
+/* ! ================== MEDIAS QUERIES ================== */
 
 @media (max-width:1024px) {
-    body {
-        background-color: white;
-    }
-
     .instagram-wrapper {
-        width: 90%;
+        width: 90%; /* Ocupará 90% da tela de menos de 1024px */
     }
 }
 
 @media (max-width: 650px) {
+    body {
+        background-color: white;
+    }
+    
     .instagram-wrapper {
         width: 90%;
     }
 
     .instagram-phone {
-        display: none;
+        display: none; /* Sem a tela do celular */
     }
 
     .instagram-continue {
-        width: 100%;
+        width: 100%; /* Tela de login ocupará toda a largura do espaço do conteúdo */
     }
 
     .group {
